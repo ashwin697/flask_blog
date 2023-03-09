@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sno</th>
+        <th scope="col">Title</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in post %}
+      <tr>
+        <th scope="row">{{i.sno}}</th>
+        <td><a class="text" href="/post/{{i.slug}}">{{i.title}}</a></td>
+        <td><a class="btn btn-warning" href="/edit/{{i.slug}}" role="button">Edit</a></td>
+        <td><a class="btn btn-danger" href="/delete/{{i.sno}}" role="button">Delete</a></td>
+      </tr>
+      {% endfor %}
+     
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center mx-5 my-5">
+          
+          	
+    <a class="btn btn-primary mx-2 float-left" href="{{prev}}"> &larr;Previous</a>
+    <a class="btn btn-primary mx-2 float-right" href="{{next}}">Next &rarr;</a>
+  </div>
+</div>
+
+{% endblock %}

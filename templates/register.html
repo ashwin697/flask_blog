@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .register-container {
+        max-width: 400px;
+        margin: auto;
+        margin-top: 100px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        text-align: center;
+    }
+    .form-control {
+        border-radius: 20px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 20px;
+        width: 100%;
+    }
+    .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+</style>
+
+<div class="register-container">
+    <h1>Register</h1>
+    <form method="post" action="{{ url_for('register') }}">
+        <div class="form-group">
+            <input type="text" class="form-control mt-3" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control mt-3" id="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control mt-3" id="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">Register</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+<img src="{{url_for ('static',filename='contact.jpg')}}" class="card-img img-responsive" style="height: 450px;" alt="...">
+
+<div class="container mt-4">
+
+    <form method="post" action="{{ url_for('contact') }}" >
+        <div class="form-group">
+          <label for="name mt-2">Name</label>
+          <input type="text" class="form-control mt-2" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email" class="mt-2">Email address</label>
+          <input type="email" class="form-control mt-2" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="mt-2">Phone</label>
+          <input type="tel" class="form-control mt-2" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="subject" class="mt-2">Subject</label>
+          <input type="text" class="form-control mt-2" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="description" class="mt-2">Description</label>
+          <textarea class="form-control mt-2" id="description" name="description" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2 ">Submit</button>
+      </form>
+      
+
+</div>
+
+</div>
+
+{% endblock %}
