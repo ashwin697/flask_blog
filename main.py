@@ -7,10 +7,10 @@ import os
 from flask_ckeditor import CKEditor
 import math
 
-passwd = "your password"
+passwd = "123"
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://flask:{passwd}@localhost/flask_app'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://root:{passwd}@db/flask_app'
 db = SQLAlchemy(app)
 app.secret_key = 'fdgddfg^&^SDdgdhe3#tB455gdfgdf%^$#$#@#CVTRsSader'
 ckeditor = CKEditor(app)
